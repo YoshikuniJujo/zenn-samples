@@ -26,6 +26,7 @@ dependencies:
 - exception-hierarchy
 - c-enum
 - c-struct
+- random
 
 library:
   source-dirs: src
@@ -56,6 +57,15 @@ executables:
     - zenn-use-c-lib
   try-main-loop:
     main:                try-main-loop.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - zenn-use-c-lib
+  try-game:
+    main:                try-game.hs
     source-dirs:         app
     ghc-options:
     - -threaded
